@@ -13,7 +13,8 @@ def main():
     st.title("Streamlit")
     st.sidebar.header("Options")
     page = st.sidebar.selectbox(
-        "Upload your data to create an Exploratory Data Analysis", options=list(PAGES.keys())
+        "Upload your data to create an Exploratory Data Analysis",
+        options=list(PAGES.keys())
     )
     PAGES[page]()
 
@@ -24,10 +25,16 @@ def render_eda():
     data = st.file_uploader("Upload Dataset", type=["csv", "txt"])
     if data is not None:
         df = pd.read_csv(data)
+        # to adjust profile report check this link
+        # https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/index.html
+        # use --> (minimal=True) setting for large datasets
         pr = ProfileReport(df, explorative=True)
         st.title("Pandas Profiling Report in Streamlit")
         st.write(df)
         st_profile_report(pr)
+        # save report
+        pr.to_file("Output.html")
+        st.write("Your report has been saved!")
 
 
 def render_about():
