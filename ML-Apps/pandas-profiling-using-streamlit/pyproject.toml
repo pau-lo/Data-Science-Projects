@@ -2,7 +2,7 @@
 name = "pandas-profiling-using-streamlit"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Paulo Lopez <paulo.lopez@protonmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
