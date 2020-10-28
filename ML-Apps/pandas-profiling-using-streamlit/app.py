@@ -13,7 +13,7 @@ def main():
     st.title("Streamlit")
     st.sidebar.header("Options")
     page = st.sidebar.selectbox(
-        "Choose whether to perform EDA or ML Building", options=list(PAGES.keys())
+        "Upload your data to create an Exploratory Data Analysis", options=list(PAGES.keys())
     )
     PAGES[page]()
 
@@ -33,7 +33,7 @@ def render_eda():
 def render_about():
     st.subheader("About")
     st.write(
-        """An App facilitating exploratory data analysis by usinng
+        """An App facilitating exploratory data analysis by using
         pandas profiling for streamlit."""
     )
     st.markdown(
