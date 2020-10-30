@@ -22,6 +22,8 @@ def main():
 def render_eda():
     st.title("Create a Complete Report of your data.")
     st.subheader("Exploratory Data Analysis using pandas profiling.")
+    st.write("""All you need to do is upload a dataset and get a quick
+            sense of your data.""")
     data = st.file_uploader("Upload Dataset", type=["csv", "txt"])
     if data is not None:
         df = pd.read_csv(data)
@@ -46,7 +48,11 @@ def render_about():
     st.markdown(
         """Thank you [okld](
             https://github.com/okld/streamlit-pandas-profiling) for
-            creating the pandas profiling component for streamlit."""
+            creating the pandas profiling component for streamlit.
+            Check out the [pandas-profiling](
+            https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/index.html)
+            main page for more ways to configure your exploratory analysis.
+        """
     )
 
 
